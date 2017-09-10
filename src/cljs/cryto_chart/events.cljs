@@ -44,3 +44,9 @@
         (assoc :loading? false)
         (assoc :error-msg "Failed to load data")
     )))
+
+(rf/reg-event-db
+  :timer
+  (fn
+    [db [_ new-time]]
+    (assoc db :time new-time)))

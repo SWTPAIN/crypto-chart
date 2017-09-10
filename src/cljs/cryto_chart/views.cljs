@@ -29,7 +29,7 @@
   ))
 
 
-(defn main-panel
+(defn main-app
   []
   (let [loading? @(rf/subscribe [:loading?])
         error-msg @(rf/subscribe [:error-msg])]
