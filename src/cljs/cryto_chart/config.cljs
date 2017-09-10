@@ -1,4 +1,4 @@
-(ns cryto-chart.config)
+(ns crypto-chart.config)
 
 (def debug?
   ^boolean goog.DEBUG)

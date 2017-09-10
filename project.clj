@@ -1,8 +1,10 @@
-(defproject cryto-chart "0.1.0-SNAPSHOT"
+(defproject crypto-chart "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.908"]
                  [reagent "0.7.0"]
-                 [re-frame "0.10.1"]]
+                 [re-frame "0.10.1"]
+                 [cljs-ajax "0.7.2"]
+                 [day8.re-frame/http-fx "0.1.4"]]
 
   :plugins [[lein-cljsbuild "1.1.5"]]
 
@@ -25,8 +27,8 @@
   {:builds
    [{:id           "dev"
      :source-paths ["src/cljs"]
-     :figwheel     {:on-jsload "cryto-chart.core/mount-root"}
-     :compiler     {:main                 cryto-chart.core
+     :figwheel     {:on-jsload "crypto-chart.core/mount-root"}
+     :compiler     {:main                 crypto-chart.core
                     :output-to            "resources/public/js/compiled/app.js"
                     :output-dir           "resources/public/js/compiled/out"
                     :asset-path           "js/compiled/out"
@@ -37,7 +39,7 @@
 
     {:id           "min"
      :source-paths ["src/cljs"]
-     :compiler     {:main            cryto-chart.core
+     :compiler     {:main            crypto-chart.core
                     :output-to       "resources/public/js/compiled/app.js"
                     :optimizations   :advanced
                     :closure-defines {goog.DEBUG false}

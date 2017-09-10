@@ -1,4 +1,6 @@
-(ns cryto-chart.db)
+(ns crypto-chart.db)
 
 (def default-db
-  {:point 5})
+  {:loading? true
+   :error-msg nil
+   :coins []})

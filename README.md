@@ -1,6 +1,6 @@
-# cryto-chart
+# crypto-chart
 
-A toy project for learning [re-frame](https://github.com/Day8/re-frame) and clojurescript. It will be about cryto currency charting
+A toy project for learning [re-frame](https://github.com/Day8/re-frame) and clojurescript. It will be about crypto currency charting
 
 ## Development Mode
 

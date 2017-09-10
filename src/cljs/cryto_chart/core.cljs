@@ -1,10 +1,10 @@
-(ns cryto-chart.core
+(ns crypto-chart.core
   (:require [reagent.core :as reagent]
             [re-frame.core :as re-frame]
-            [cryto-chart.events]
-            [cryto-chart.subs]
-            [cryto-chart.views :as views]
-            [cryto-chart.config :as config]))
+            [crypto-chart.events]
+            [crypto-chart.subs]
+            [crypto-chart.views :as views]
+            [crypto-chart.config :as config]))
 
 
 (defn dev-setup []

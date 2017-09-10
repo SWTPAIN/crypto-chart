@@ -1,1 +1,1 @@
-(ns cryto-chart.core)
+(ns crypto-chart.core)
