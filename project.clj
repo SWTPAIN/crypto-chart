@@ -4,7 +4,10 @@
                  [reagent "0.7.0"]
                  [re-frame "0.10.1"]
                  [cljs-ajax "0.7.2"]
-                 [day8.re-frame/http-fx "0.1.4"]]
+                 [day8.re-frame/http-fx "0.1.4"]
+                 ; SLF4J is required dependency for SASS4CLJ compilation
+                 [org.slf4j/slf4j-nop "1.7.13" :scope "test"]
+                 ]
 
   :plugins [[lein-cljsbuild "1.1.5"]]
 
@@ -16,11 +19,17 @@
 
   :figwheel {:css-dirs ["resources/public/css"]}
 
+  :sass {:source-paths ["resources/sass"]
+         :target-path  "resources/public/css"
+         :output-style "compact"}
+
   :profiles
   {:dev
    {:dependencies [[binaryage/devtools "0.9.4"]]
 
-    :plugins      [[lein-figwheel "0.5.13"]]
+    :plugins      [
+                   [lein-figwheel "0.5.13"]
+                   [deraen/lein-sass4clj "0.3.1"]]
     }}
 
   :cljsbuild

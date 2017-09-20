@@ -7,6 +7,7 @@ A toy project for learning [re-frame](https://github.com/Day8/re-frame) and cloj
 ### Run application:
 
 ```
+lein sass4clj once
 lein clean
 lein figwheel dev
 ```
