@@ -50,3 +50,9 @@
   (fn
     [db [_ new-time]]
     (assoc db :time new-time)))
+
+; panel
+(rf/reg-event-db
+  :panels/toggle
+  (fn [db [_ id]]
+    (update-in db [:panels id] not)))

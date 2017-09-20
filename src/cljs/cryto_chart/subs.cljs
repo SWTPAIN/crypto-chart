@@ -1,18 +1,24 @@
 (ns crypto-chart.subs
   (:require-macros [reagent.ratom :refer [reaction]])
-  (:require [re-frame.core :as re-frame]))
+  (:require [re-frame.core :as rf]))
 
-(re-frame/reg-sub
+(rf/reg-sub
  :loading?
  (fn [db]
    (:loading? db)))
 
-(re-frame/reg-sub
+(rf/reg-sub
   :error-msg
   (fn [db]
     (:error-msg db)))
 
-(re-frame/reg-sub
+(rf/reg-sub
   :coins
   (fn [db]
     (:coins db)))
+
+; panel
+(rf/reg-sub
+  :panels/state
+  (fn [db [_ id]]
+    (get-in db [:panels id])))

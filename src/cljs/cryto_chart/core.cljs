@@ -6,7 +6,7 @@
             [crypto-chart.views :as views]
             [crypto-chart.config :as config]))
 
-(def POLLING_API_INTERVAL 10000)
+(def POLLING_API_INTERVAL 5000)
 
 (defn dev-setup []
   (when config/debug?

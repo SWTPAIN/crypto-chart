@@ -3,4 +3,5 @@
 (def default-db
   {:loading? true
    :error-msg nil
-   :coins []})
+   :coins []
+   :panels {}})

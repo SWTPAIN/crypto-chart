@@ -1,5 +1,23 @@
 $brand-color: #99CC08;
 
-.body {
+body {
   background: $brand-color;
+}
+
+.panel-title {
+  background: #ddd;
+}
+
+.panel-children-container {
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.panel-children {
+  overflow: hidden;
+  transition: max-height 0.8s;
+}
+
+.sortable-table {
+  font-size: 80%;
 }
