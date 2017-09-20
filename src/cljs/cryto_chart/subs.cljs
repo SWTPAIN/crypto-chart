@@ -22,3 +22,9 @@
   :panels/state
   (fn [db [_ id]]
     (get-in db [:panels id])))
+
+; profile
+(rf/reg-sub
+  :profile
+  (fn [db [_]]
+    (:profile db)))

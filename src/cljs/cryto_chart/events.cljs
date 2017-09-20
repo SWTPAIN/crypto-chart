@@ -56,3 +56,11 @@
   :panels/toggle
   (fn [db [_ id]]
     (update-in db [:panels id] not)))
+
+; profile
+(rf/reg-event-db
+  :profile/edit
+  (fn [db [_ field-name value]]
+    (println "field-name => " field-name)
+    (println "value=> " value)
+    (assoc-in db [:profile field-name] value)))

@@ -4,4 +4,6 @@
   {:loading? true
    :error-msg nil
    :coins []
-   :panels {}})
+   :panels {}
+   :profile {:name "Alice"
+             :bio "I am a good trader."}})

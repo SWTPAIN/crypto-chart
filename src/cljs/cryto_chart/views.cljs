@@ -1,6 +1,7 @@
 (ns crypto-chart.views
   (:require [reagent.core :as reagent]
-            [re-frame.core :as rf]))
+            [re-frame.core :as rf]
+            [cryto-chart.profile.view :refer [inline-editor]]))
 
 
 (defn err-msg-toastr
@@ -63,16 +64,6 @@
           ]
                 ))))
 
-(defn coin-item
-  [{:keys [id rank name symbol price_usd market_cap_usd]}]
-  [:tr
-    [:td rank]
-    [:td name]
-    [:td symbol]
-    [:td price_usd]
-    [:td market_cap_usd]]
-  )
-
 (def coin-headers
   '({:name "Rank" :keyword :rank}
     {:name "Name" :keyword :name}
@@ -90,8 +81,10 @@
   (let [s (reagent/atom {:child-height 0})]
     (fn [id title children]
       (let [open? @(rf/subscribe [:panels/state id])
+            profile @(rf/subscribe [:profile])
             child-height (:child-height @s)]
       [:div
+        [inline-editor (:name profile) #(rf/dispatch [:profile/edit :name %])]
         [:div
           {:on-click #(rf/dispatch [:panels/toggle id])
            :class "panel-title"}
